@@ -1,0 +1,24 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #000; /* fallback */
+  overflow-x: hidden;
+}
+
+.app-wrapper {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate; /* creates a clean stacking context */
+}
+
+.starfield-canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 0; /* keep it behind app content */
+}

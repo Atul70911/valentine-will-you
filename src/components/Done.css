@@ -1,0 +1,118 @@
+.done-container {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  color: white;
+}
+
+.done-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 520px at 30% 30%, rgba(255,128,191,0.12), transparent 60%),
+    radial-gradient(900px 520px at 70% 60%, rgba(160,160,255,0.12), transparent 60%),
+    radial-gradient(700px 460px at 50% 85%, rgba(0,212,255,0.08), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.done-emoji-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.done-emoji {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
+  will-change: transform, opacity;
+
+  animation: doneFloat var(--dur, 10s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes doneFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateX(0) translateY(0) rotate(var(--rot, 0deg));
+  }
+  50% {
+    transform: translate(-50%, -50%) translateX(var(--dx, 30px)) translateY(var(--dy, -25px)) rotate(calc(var(--rot, 0deg) * -1));
+  }
+}
+
+.done-card {
+  position: relative;
+  z-index: 2;
+  width: min(820px, 92vw);
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.60),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
+  text-align: center;
+}
+
+.done-card h1 {
+  margin: 0 0 0.8rem;
+  font-size: clamp(2.1rem, 6vw, 4rem);
+  font-weight: 900;
+
+  background: linear-gradient(45deg, #ffffff, #a0a0ff, #ff80bf, #00d4ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 18px rgba(255,255,255,0.22),
+    0 0 52px rgba(160,160,255,0.14);
+
+  animation: doneShimmer 5s ease-in-out infinite;
+}
+
+@keyframes doneShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.done-card p {
+  margin: 0.2rem 0;
+  font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.done-sub {
+  margin-top: 1rem !important;
+  font-size: 1rem !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.done-highlight {
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 0 18px rgba(255, 128, 191, 0.22);
+}
+
+@media (max-width: 768px) {
+  .done-card {
+    border-radius: 22px;
+    padding: 1.5rem;
+  }
+}
