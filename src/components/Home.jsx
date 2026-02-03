@@ -12,12 +12,12 @@ const Home = ({setEmail, email, setPage}) => {
   return (
     <div className="home-container">
       <div className="hero-image">
-        <img src="/src/assets/img1.jpg" alt="Bimbo" />
-        <img src="/src/assets/img2.jpg" alt="Bimbo" />
-        <img src="/src/assets/img3.jpg" alt="Bimbo" />
-        <img src="/src/assets/img4.jpg" alt="Bimbo" />
-        <img src="/src/assets/img5.jpg" alt="Bimbo" />
-        <img src="/src/assets/img6.jpg" alt="Bimbo" />
+        <img src="./src/assets/img1.jpg" alt="Bimbo" />
+        <img src="./src/assets/img2.jpg" alt="Bimbo" />
+        <img src="./src/assets/img3.jpg" alt="Bimbo" />
+        <img src="./src/assets/img4.jpg" alt="Bimbo" />
+        <img src="./src/assets/img5.jpg" alt="Bimbo" />
+        <img src="./src/assets/img6.jpg" alt="Bimbo" />
       </div>
 
       <h1 className="home-title">Hi, Bimbo...</h1>
