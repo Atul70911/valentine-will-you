@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import "./Home.css";
 
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
+import img3 from "../assets/img3.jpg";
+import img4 from "../assets/img4.jpg";
+import img5 from "../assets/img5.jpg";
+import img6 from "../assets/img6.jpg";
+
 const Home = ({setEmail, email, setPage}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -9,15 +16,17 @@ const Home = ({setEmail, email, setPage}) => {
 
   };
 
+  
+
   return (
     <div className="home-container">
       <div className="hero-image">
-        <img src="./src/assets/img1.jpg" alt="Bimbo" />
-        <img src="./src/assets/img2.jpg" alt="Bimbo" />
-        <img src="./src/assets/img3.jpg" alt="Bimbo" />
-        <img src="./src/assets/img4.jpg" alt="Bimbo" />
-        <img src="./src/assets/img5.jpg" alt="Bimbo" />
-        <img src="./src/assets/img6.jpg" alt="Bimbo" />
+        <img src={img1} alt="img1" />
+        <img src={img2} alt="img2" />
+        <img src={img3} alt="img3" />
+        <img src={img4} alt="img4" />
+        <img src={img5} alt="img5" />
+        <img src={img6} alt="img6" />
       </div>
 
       <h1 className="home-title">Hi, Bimbo...</h1>
